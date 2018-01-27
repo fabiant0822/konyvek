@@ -19,7 +19,7 @@ public class DB {
     ResultSet eredmeny = null;
     PreparedStatement ekp = null;
     
-    final String dbUrl = "jdbc:mysql://localhost:3306/konyvek";
+    final String dbUrl = "jdbc:mysql://localhost:3306/konyvek?useUnicode=true&characterEncoding=UTF-8";
     final String user = "root";
     final String pass = "";
     
