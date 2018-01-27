@@ -55,4 +55,28 @@ public class DB {
             System.out.println("Hiba a lekérdezésben!");
         }
     }
+    
+    //adatok bevitele
+    public void uj (String szerzo, String cim, String eredeti, int ev) {
+        try {
+            String s = "INSERT INTO adatok (szerzo,cim,eredeti,ev) VALUES ('" +
+                szerzo + "','" + cim + "','" +
+                eredeti + "'," + ev + ");";
+            int sorok = parancs.executeUpdate(s);
+            System.out.println(sorok + " sor hozzáadva.");
+        } catch (SQLException ex) {
+            System.out.println("Nem sikerült a frissítés!");
+        }
+    }   
+    
+    //adatok törlése
+    public void torol(int id) {
+        try {
+            String s = "DELETE FROM adatok WHERE id=" + id + ";";
+            int sorok = parancs.executeUpdate(s);
+            System.out.println(sorok + " sor törölve");
+        } catch (SQLException ex) {
+            System.out.println("Nem sikerült a törlés!");
+        }
+    }
 }
